@@ -11,7 +11,7 @@ var main = function() {
     return false;  
   });
   // Toggles the star next to the item, not the checkbox
-  $('.glyphicon-star').click(function() {
+  $(document).on('click', '.glyphicon-star', function()  {
     $(this).toggleClass('active');
   });
   
