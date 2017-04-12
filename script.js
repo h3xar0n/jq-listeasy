@@ -14,6 +14,10 @@ var main = function() {
   $(document).on('click', '.glyphicon-star', function()  {
     $(this).toggleClass('active');
   });
+  // Removes entire paragraph upon clicking X
+  $(document).on('click', '.glyphicon-remove', function() {
+    $(this).closest('p').remove();
+  });
   
 };
 
