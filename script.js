@@ -10,7 +10,10 @@ var main = function() {
     $('#todo').val("");
     return false;  
   });
-  
+  // Toggles the star next to the item, not the checkbox
+  $('.glyphicon-star').click(function() {
+    $(this).toggleClass('active');
+  });
   
 };
 
