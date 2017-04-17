@@ -10,11 +10,9 @@ var main = function() {
     $('#todo').val("");
     return false;  
   });
-  // Toggles the star next to the item, not the checkbox
-  $(document).on('click', '.glyphicon-star', function()  {
+  $(document).on('click', '.glyphicon-star', function() {
     $(this).toggleClass('active');
   });
-  // Removes entire paragraph upon clicking X
   $(document).on('click', '.glyphicon-remove', function() {
     $(this).closest('p').remove();
   });
