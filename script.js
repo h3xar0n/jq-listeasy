@@ -1,5 +1,11 @@
 var template = function(text) {
-  return '<p><input type="checkbox"><i class="glyphicon glyphicon-star"></i><span>' + text + '</span><i class="glyphicon glyphicon-remove"></i></p>';
+  return '<p><input type="checkbox"><i class="glyphicon glyphicon-star"></i><span>'
+   + text + '</span><i class="glyphicon glyphicon-remove"></i></p>';
+};
+
+var add = function(item) {
+  var html = template(item);
+  $('.list').append(html);
 };
 
 var main = function() {
@@ -15,20 +21,17 @@ var main = function() {
   });
   $(document).on('click', '.glyphicon-remove', function() {
     $(this).closest('p').remove();
-});
+  });
 
-var commands = {
-  'add *item': add
+  // Annyang
+  if (annyang) {
+    var commands = {
+      'add *item': add
+    };
+    annyang.addCommands(commands);
+    // Start listening
+    annyang.start();
+  }
 };
-
-var add = function(item) {
-  var html = template(item);
-  $('.list').append(html);
-};
-
-annyang.addCommands(commands);
-  
-// Start listening
-annyang.start();
 
 $(document).ready(main);
