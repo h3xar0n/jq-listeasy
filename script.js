@@ -15,8 +15,20 @@ var main = function() {
   });
   $(document).on('click', '.glyphicon-remove', function() {
     $(this).closest('p').remove();
-  });
-  
+});
+
+var commands = {
+  'add *item': add
 };
+
+var add = function(item) {
+  var html = template(item);
+  $('.list').append(html);
+};
+
+annyang.addCommands(commands);
+  
+// Start listening
+annyang.start();
 
 $(document).ready(main);
